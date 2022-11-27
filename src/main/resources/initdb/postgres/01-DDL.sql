@@ -1,0 +1,7 @@
+CREATE TABLE STUDENT
+(
+    nif     VARCHAR(50) NOT NULL PRIMARY KEY,
+    name    VARCHAR(50) NOT NULL,
+    surname VARCHAR(50) NOT NULL,
+    phone   VARCHAR(50) NOT NULL
+);

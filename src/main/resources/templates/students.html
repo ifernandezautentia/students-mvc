@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Studiantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+
+<h1>Estudiantes</h1>
+
+<table class="table">
+    <tr>
+        <th scope="col">NIF</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Telefono</th>
+        <th scope="col"></th>
+    </tr>
+
+    <tr th:each="student : ${students}">
+        <td>
+            <span th:text="${student.nif}"></span>
+        </td>
+        <td>
+            <span th:text="${student.name}"></span>
+        </td>
+        <td>
+            <span th:text="${student.surname}"></span>
+        </td>
+        <td>
+            <span th:text="${student.phone}"></span>
+        </td>
+        <td>
+            <a th:href="@{/delete-student/{nif}(nif = ${student.nif})}" class="btn btn-primary">Borrar</a>
+        </td>
+    </tr>
+
+</table>
+
+<div id="new-student">
+    <a href="/student/add" class="btn btn-primary">Añadir estudiante</a>
+</div>
+
+</body>
+</html>
