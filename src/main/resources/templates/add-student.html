@@ -11,35 +11,35 @@
 
 <h1>Nuevo estudiante</h1>
 
-<form action="#" th:action="@{/addstudent}" th:object="${student}" method="post">
+<form action="#" th:action="@{/student}" th:object="${student}" method="post">
 
     <div>
         <label for="nif" class="form-label">NIF: </label>
         <input type="text" th:field="*{nif}" id="nif" placeholder="NIF" class="form-control">
-        <span th:if="${#fields.hasErrors('nif')}" th:errors="*{nif}"></span>
     </div>
+    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nif')}" th:errors="*{nif}"/>
 
     <div>
         <label for="name" class="form-label">Nombre: </label>
         <input type="text" th:field="*{name}" id="name" placeholder="Name" class="form-control">
-        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
     </div>
+    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"/>
 
     <div>
         <label for="surname" class="form-label">Apellidos: </label>
         <input type="text" th:field="*{surname}" id="surname" placeholder="Surname" class="form-control">
-        <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
     </div>
+    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"/>
 
     <div>
         <label for="phone" class="form-label">Telefono: </label>
         <input type="text" th:field="*{phone}" id="phone" placeholder="Phone" class="form-control">
-        <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
     </div>
+    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"/>
 
     <div>
         <input type="submit" value="Guardar" class="btn btn-primary">
-        <a href="/students" class="btn btn-primary">Volver</a>
+        <a href="/student" class="btn btn-primary">Volver</a>
     </div>
 
 </form>
