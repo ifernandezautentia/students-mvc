@@ -11,7 +11,7 @@
 
 <h1>Nuevo estudiante</h1>
 
-<form action="#" th:action="@{/addstudent}" th:object="${student}" method="post">
+<form action="#" th:action="@{/student}" th:object="${student}" method="post">
 
     <div>
         <label for="nif" class="form-label">NIF: </label>
@@ -39,7 +39,7 @@
 
     <div>
         <input type="submit" value="Guardar" class="btn btn-primary">
-        <a href="/students" class="btn btn-primary">Volver</a>
+        <a href="/student" class="btn btn-primary">Volver</a>
     </div>
 
 </form>

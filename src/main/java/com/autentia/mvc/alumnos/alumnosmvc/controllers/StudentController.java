@@ -25,25 +25,25 @@ public class StudentController{
         this.studentsService = studentsService;
     }
 
-    @GetMapping("/students")
+    @GetMapping("/student")
     public String findStudents(Model model){
         final List<Student> students = studentsService.findStudents();
         final List<StudentDTO> studentDTOS = toStudentDTO(students);
         model.addAttribute("students", studentDTOS);
-        return "students";
+        return "student";
     }
 
-    @PostMapping("/addstudent")
+    @PostMapping("/student")
     public String newStudent(StudentDTO studentDTO, BindingResult result, Model model){
         final Student student = toStudent(studentDTO);
         studentsService.addStudent(student);
-        return "redirect:/students";
+        return "redirect:/student";
     }
 
     @GetMapping("/delete-student/{nif}")
     public String deleteStudent(@PathVariable("nif") String nif){
         studentsService.deleteStudent(nif);
-        return "redirect:/students";
+        return "redirect:/student";
     }
 
     private Student toStudent(StudentDTO studentDTO){
